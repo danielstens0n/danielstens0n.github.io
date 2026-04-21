@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daniel Stenson / stens.one</title>
+  <meta name="description" content="Daniel Stenson — engineer in Sweden. Founding engineer at Paraglide AI. Previously investor at byFounders." />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Daniel Stenson" />
+  <meta property="og:description" content="Engineer in Sweden. Founding engineer at Paraglide AI." />
+  <meta property="og:url" content="https://stens.one" />
+  <meta property="og:image" content="https://stens.one/assets/IMG_0208.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Daniel Stenson" />
+  <meta name="twitter:description" content="Engineer in Sweden. Founding engineer at Paraglide AI." />
+  <meta name="twitter:image" content="https://stens.one/assets/IMG_0208.jpg" />
+  <style>
+    :root {
+      --fg: #1a1a1a;
+      --muted: #6b6b6b;
+      --faint: #b8b8b8;
+      --rule: #e6e6e6;
+      --bg: #ffffff;
+      --link: #1a1a1a;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --fg: #e8e8e8;
+        --muted: #9a9a9a;
+        --faint: #5a5a5a;
+        --rule: #2a2a2a;
+        --bg: #0e0e0e;
+        --link: #e8e8e8;
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    main {
+      max-width: 720px;
+      margin: 0;
+      padding: 24px 64px 120px;
+      text-align: left;
+    }
+
+    header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 0 0 4px;
+      letter-spacing: -0.02em;
+    }
+
+    header .tag {
+      color: var(--muted);
+      margin: 0 0 48px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: lowercase;
+      color: var(--muted);
+      margin: 0 0 16px;
+      letter-spacing: 0.02em;
+    }
+
+    p {
+      margin: 0 0 12px;
+      color: var(--fg);
+    }
+
+    .muted { color: var(--muted); }
+
+    ul.entries {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul.entries li {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 16px;
+      padding: 10px 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    ul.entries li:last-child {
+      border-bottom: 1px solid var(--rule);
+    }
+
+    ul.entries .when {
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    ul.entries .what .role {
+      color: var(--fg);
+    }
+
+    ul.entries .what .org {
+      color: var(--muted);
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+      border-bottom: 1px solid var(--faint);
+      transition: border-color 120ms ease;
+    }
+
+    a:not(.btn-primary):hover {
+      border-bottom-color: var(--fg);
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border: 1px solid rgba(28, 70, 194, 0.6);
+      border-radius: 8px;
+      background: linear-gradient(180deg, #4c8dff 0%, #1f5fe3 100%);
+      color: #fff;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.25),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.12),
+        0 1px 2px rgba(15, 45, 120, 0.18),
+        0 6px 16px rgba(31, 95, 227, 0.25);
+      transition: transform 120ms ease, box-shadow 120ms ease, filter 120ms ease;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.05);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.12),
+        0 1px 2px rgba(15, 45, 120, 0.2),
+        0 8px 20px rgba(31, 95, 227, 0.32);
+    }
+
+    .btn-primary:active {
+      transform: translateY(1px);
+      filter: brightness(0.97);
+    }
+
+    .btn-primary:focus-visible {
+      outline: 2px solid #4c8dff;
+      outline-offset: 2px;
+    }
+
+    .btn-row {
+      margin: 0 0 16px;
+    }
+
+    .portrait {
+      margin: 48px 0 0;
+      max-width: 300px;
+    }
+
+    .portrait img, .demo video {
+      display: block;
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid var(--rule);
+    }
+
+    .portrait img {
+      height: 320px;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+
+    .demo {
+      margin: 24px 0 0;
+    }
+
+    .demo video {
+      background: #000;
+    }
+
+    .portrait figcaption, .demo figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    footer {
+      margin-top: 64px;
+      color: var(--faint);
+      font-size: 12px;
+    }
+
+    @media (max-width: 520px) {
+      main { padding: 20px 24px 80px; }
+      ul.entries li {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Daniel Stenson</h1>
+      <p class="tag">Engineer, based in Sweden. Founding engineer at <a href="https://www.paraglide.ai/" target="_blank" rel="noopener noreferrer">Paraglide AI</a>.</p>
+    </header>
+
+    <section>
+      <h2>work</h2>
+      <ul class="entries">
+        <li>
+          <span class="when">Jul 2025 – present</span>
+          <span class="what"><span class="role">Founding engineer</span> · <span class="org"><a href="https://www.paraglide.ai/" target="_blank" rel="noopener noreferrer">Paraglide AI</a></span></span>
+        </li>
+        <li>
+          <span class="when">Jan 2024 – Sep 2025</span>
+          <span class="what"><span class="role">Investor</span> · <span class="org"><a href="https://byfounders.vc/" target="_blank" rel="noopener noreferrer">byFounders</a></span> <span class="muted">(early-stage VC)</span></span>
+        </li>
+        <li>
+          <span class="when">Aug 2023 – Jan 2024</span>
+          <span class="what"><span class="role">Data engineer</span> · <span class="org">Accenture</span></span>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>projects</h2>
+      <p>I build things on the side. Most recently <a href="https://github.com/danielstens0n/daston" target="_blank" rel="noopener noreferrer">Daston</a>, a visual design companion for terminal coding agents like Claude Code &mdash; edit fonts, colors, and components on a canvas, hand the changes back as prompts. Before that, <a href="https://github.com/danielstens0n/tailend" target="_blank" rel="noopener noreferrer">Tailend</a>, a recruiting platform for robotics teleoperators where candidates apply by controlling a simulated robot in the browser (Next.js, MuJoCo). Last year I spent time on <a href="https://labpalai.com" target="_blank" rel="noopener noreferrer">Labpal</a> with friends from CERN and Lund &mdash; an early attempt at autonomous research, roughly in the direction <a href="https://x.com/karpathy/status/2030371219518931079" target="_blank" rel="noopener noreferrer">Karpathy recently described</a> (but a year in advance). It turned raw data into a complete Jupyter notebook in under three minutes.</p>
+      <figure class="demo">
+        <video autoplay muted loop playsinline preload="metadata" src="https://labpalai.com/assets/hero_demo_video.mp4"></video>
+        <figcaption>Labpal.</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>study</h2>
+      <p>M.Sc. in Industrial Engineering &amp; Management, Lund University — five-year program with a specialization in applied mathematics.</p>
+      <p class="muted">Research with the Department of Computer Science under Pierre Nugu&egrave;s on models for predicting outcomes of heart and lung transplantations. Published in <a href="https://ieeexplore.ieee.org/iel8/11251507/11251526/11254175.pdf" target="_blank" rel="noopener noreferrer">IEEE Xplore</a>.</p>
+    </section>
+
+    <section>
+      <h2>earlier</h2>
+      <p>Between 14 and 18, I did <a href="https://www.youtube.com/@DanielsStyl/videos" target="_blank" rel="noopener noreferrer">graphic design on YouTube</a> (network partnership at ~1k subscribers, a few design contest wins) and later ran an Amazon FBA company (CDS Enterprise) selling office supplies in the US &mdash; around $20k in revenue.</p>
+    </section>
+
+    <section>
+      <h2>writing</h2>
+      <ul class="entries">
+        <li>
+          <span class="when">Dec 2024</span>
+          <span class="what"><a href="https://www.byfounders.vc/insights/a-path-toward-physical-intelligence-seeing-ais-full-potential-2" target="_blank" rel="noopener noreferrer">A Path Toward Physical Intelligence: Seeing AI&rsquo;s Full Potential</a> <span class="muted">· byFounders</span></span>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>elsewhere</h2>
+      <p class="btn-row">
+        <a class="btn-primary" href="mailto:daniel@stens.one">Say hi &rarr;</a>
+      </p>
+      <p class="links">
+        <a href="mailto:daniel@stens.one">daniel@stens.one</a>
+        <a href="https://github.com/danielstens0n" target="_blank" rel="me noopener noreferrer">github</a>
+        <a href="https://www.linkedin.com/in/danielstenson/" target="_blank" rel="me noopener noreferrer">linkedin</a>
+        <a href="https://x.com/c_danielstenson" target="_blank" rel="me noopener noreferrer">x</a>
+      </p>
+    </section>
+
+    <figure class="portrait">
+      <img src="assets/IMG_0208.jpg" alt="Daniel Stenson" loading="lazy" />
+      <figcaption>Me coding at Paraglide HQ, London 2026</figcaption>
+    </figure>
+
+    <footer>
+      <span>stens.one</span>
+    </footer>
+  </main>
+</body>
+</html>
